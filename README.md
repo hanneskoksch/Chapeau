@@ -9,7 +9,9 @@ This is the mobile-first online-implementation of a popular word- and guessing-b
 1. Firebase Database
 2. Invite others directly via QR-code
 
-
-
 Written in plain JavaScript.
 
+
+
+## Screenshots
+![Screenshots](Screenshots/Screenshots.png)  
