@@ -1,0 +1,326 @@
+@font-face {
+    font-family: 'School Holic School Holic 3';
+    font-style: normal;
+    font-weight: normal;
+    src: local('School Holic School Holic 3'), url('/fonts/School\ Holic\ 3.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'School Holic School Holic 6';
+    font-style: normal;
+    font-weight: normal;
+    src: local('School Holic School Holic 6'), url('/fonts/School\ Holic\ 6.woff') format('woff');
+}
+
+#addTerms {
+    display: none;
+}
+
+#settings {
+    display: none;
+}
+
+#guessing {
+    display: none;
+}
+
+#playing {
+    display: none;
+}
+
+#endscreen {
+    display: none;
+}
+
+body {
+    background-color: #293241;
+    margin: 1rem;
+    text-align: center;
+}
+
+h1 {
+    color: #ffffff;
+    font-family: 'School Holic School Holic 6';
+    font-size: 3em;
+    margin: 2rem 0 0 0;
+}
+
+h2 {
+    color: #ffffff;
+    font-family: 'School Holic School Holic 3';
+    margin: 1rem;
+}
+
+p {
+    font-family: 'Reem Kufi', sans-serif;
+    color: #293241;
+    font-size: 1.3em;
+    margin: 15px 0 15px 0;
+}
+
+button:focus {
+    outline: none;
+}
+
+.radioButtons label{
+    display: inline-block;
+    background-color: #9DC6DE;
+    color: #ffffff;
+    padding: 10px 20px;
+    margin: 10px;
+    width: 1em;
+    font-family: 'Reem Kufi', sans-serif;
+    font-size: 1.3em;
+    border: none;
+    border-radius: 4px;
+}
+
+.radioButtons input[type='radio'] {
+    opacity: 0;
+    position: fixed;
+    width: 0;
+}
+
+.radioButtons input[type="radio"]:checked + label {
+    background-color:#293241;
+}
+
+.container {
+    position: relative;
+    background-color: #ffffff;
+    border-radius: 30px;
+    padding: 1.5em;
+    /* width: fit-content; */
+}
+
+.container #actionButton {
+    height: 130px;
+    width: 130px;
+    border-radius: 50%;
+    border-style: none;
+    background-color: #EE6C4D;
+    font-size: 4em;
+    color: #ffffff;
+    margin: 10px;
+}
+
+.container .centeredForm {
+    position: relative;
+    display: inline-flex;
+    margin: 10px 0 20px 0;
+}
+
+.container input {
+    border-radius: 10px;
+    border-color: #EE6C4D;
+    border-width: 3px;
+    border-style: solid;
+    margin: 5px;
+    font-family: 'Reem Kufi', sans-serif;
+    font-size: 1.3em;
+    padding-left: 10px;
+    height: 1.3em;
+
+    display: table-cell;
+    width: 100%;
+    margin-bottom: 0;
+}
+
+.container input:focus {
+    outline: none;
+}
+
+.container .arrowButton {
+    position: absolute; 
+    background-image: url("/svg/arrow_forward-24px.svg");
+    background-position: center;
+    background-color: #EE6C4D;
+    border: none; 
+    border-radius: 5px; 
+    width: 40px;
+    height: 30px; 
+    margin: 5px;
+    top: 2px; 
+    right: 3px; 
+    z-index: 2; 
+    cursor: pointer; 
+    transform: translateX(2px); 
+}
+
+
+/*
+.container .arrowButton {
+    border-radius: 50%;
+    border-style: none;
+    height: 3em;
+    width: 3em;
+    background-color: #EE6C4D;
+    margin: 5px;
+    border-left: 0;
+}
+*/
+
+.container .arrowButton img {
+    height: 2em;
+}
+
+.container .displayRoundcode {
+    display: inline-flex;
+    margin-top: 3em;
+}
+
+.container .displayRoundcode p {
+    color: #9DC6DE;
+}
+
+.container .nameOfRoundHeading {
+    border-style: solid;
+    border-width: 3px;
+    border-color: #fff;
+}
+
+.container .nameOfRound {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    border-style: solid;
+    border-width: 3px;
+    margin-left: 10px;
+    padding: 5px;
+}
+
+.container .teamInfo {
+    display: inline-flex;
+}
+
+.container .teamBox {
+    width: 2em;
+    background-color: #293241;
+    margin-left: 10px;
+}
+
+.container .teamBox p {
+    color: #ffffff;
+    font-size: 1em;
+
+}
+
+.container ul {
+    padding: 0;
+    list-style-type: none;
+    font-family: 'Reem Kufi', sans-serif;
+    color: #ffffff;
+    background-color: #293241;
+}
+
+#qrcode {
+    display: none;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+}
+
+#qrcode img {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+
+.qrcodeButton {
+    background-color: #9DC6DE;
+    color: #293241;
+    border: none;
+    border-radius: 5px;
+    width: 3em;
+    height: 3em;
+}
+
+.infobar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.infobar p {
+    font-size: 1em;
+    margin: 0;
+}
+
+.bigButton {
+    background-color: #EE6C4D;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Reem Kufi', sans-serif;
+    font-size: 1.3em;
+    color: #ffffff;
+    width: 100%;
+    height: 3em;
+
+}
+
+#addTerms .bigButton {
+    margin-top: 3em;
+}
+
+
+#playing .buttonGroup {
+    display: inline-flex;
+    width: 100%;
+    margin-top: 10px;
+}
+
+#playing .buttonGroup #nextTerm {
+    background-color: #293241;
+    margin-right: 5px;
+}
+
+#playing .buttonGroup #nextTerm:disabled {
+    background-color: #9DC6DE;
+}
+
+#playing .buttonGroup #guessed {
+    background-color: #48A43D;
+    margin-left: 5px;
+}
+
+#playing .buttonGroup #guessed:disabled {
+    background-color: #9DC6DE;
+}
+
+#playing button img {
+    height: 2em;
+}
+
+
+#displayedTerm {
+    background-color: #293241;
+    color: #ffffff;
+    font-size: 2.5em;
+    border-radius: 10px;
+    overflow-wrap: break-word;
+}
+
+.scoreboard {
+    display: inline-flex;
+}
+
+#guessing .bigButton {
+    margin-top: 3em;
+}
+
+
+#playing #timer {
+    font-size: 2em;
+}
+
+#hut {
+    transform: scaleY(-1);
+    font-size: 2em;
+}
+
+#endscreen .scoreboard p {
+    font-size: 3em;
+}

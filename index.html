@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-157928176-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-157928176-1');
+  </script>
+
+  <meta charset="utf-8">
+  <title>Chapeau - The Game</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+
+  <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/favicon/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+</head>
+
+<body>
+
+  <div id="qrBlurArea">
+
+    <h1>Chapeau</h1>
+    <h2>The Game</h2>
+
+
+    <div class="container">
+
+
+      <div id="newRound">
+        <p>Team wählen</p>
+        <div class="radioButtons">
+          <input type="radio" onclick="setTeam(this.value)" id="team1" name="team" value="1">
+          <label for="team1">1</label>
+          <input type="radio" onclick="setTeam(this.value)" id="team2" name="team" value="2">
+          <label for="team2">2</label>
+        </div>
+
+        <div id="qrEntry">
+          <p>Neue Runde erstellen</p>
+          <button id="actionButton" onclick="createNewRound()">+</button>
+          <p>oder</p>
+        </div>
+        <p>Bestehender Runde beitreten</p>
+        <form class="centeredForm" id="primaryKeyForm">
+          <input type="text" id="primaryKey">
+          <div class='arrowButton' onclick="joinGame()">
+          </div>
+        </form>
+ 
+      </div>
+
+
+
+
+      <div id="settings">
+        <p>Zeit einstellen</p>
+        <div class="radioButtons">
+          <input type="radio" onclick="setTime(this.value)" id="time30" name="time" value="30">
+          <label for="time30">30</label>
+          <input type="radio" onclick="setTime(this.value)" id="time35" name="time" value="35">
+          <label for="time35">35</label>
+          <input type="radio" onclick="setTime(this.value)" id="time40" name="time" value="40">
+          <label for="time40">40</label>
+        </div>
+
+        <p>Countdown-Ton</p>
+        <div class="radioButtons">
+          <input type="radio" onclick="setSound(this.value)" id="sound1" name="sound" value="buzzer.mp3">
+          <label for="sound1">1</label>
+          <input type="radio" onclick="setSound(this.value)" id="sound2" name="sound" value="gong.mp3">
+          <label for="sound2">2</label>
+          <input type="radio" onclick="setSound(this.value)" id="sound3" name="sound" value="haltstop.mp3">
+          <label for="sound3">3</label>
+        </div>
+
+        <!--
+        <p>Anzahl Runden</p>
+        <div class="radioButtons">
+          <input type="radio" onclick="setNumberOfRounds(this.value)" id="rounds1" name="rounds" value="1">
+          <label for="rounds1">1</label>
+          <input type="radio" onclick="setNumberOfRounds(this.value)" id="rounds2" name="rounds" value="2">
+          <label for="rounds2">2</label>
+          <input type="radio" onclick="setNumberOfRounds(this.value)" id="rounds3" name="rounds" value="3">
+          <label for="rounds3">3</label>
+          <input type="radio" onclick="setNumberOfRounds(this.value)" id="rounds4" name="rounds" value="4">
+          <label for="rounds4">4</label>
+        </div>
+        -->
+
+        <!--
+        <p>Max. Wörter pro Spieler</p>
+        <div class="radioButtons">
+          <input type="radio" onclick="setMaxWords(this.value)" id="maxWords1" name="maxWords" value="1">
+          <label for="maxWords1">1</label>
+          <input type="radio" onclick="setMaxWords(this.value)" id="maxWords2" name="maxWords" value="2">
+          <label for="maxWords2">2</label>
+          <input type="radio" onclick="setMaxWords(this.value)" id="maxWords3" name="maxWords" value="3">
+          <label for="maxWords3">3</label>
+          <input type="radio" onclick="setMaxWords(this.value)" id="maxWords4" name="maxWords" value="4">
+          <label for="maxWords4">4</label>
+        </div>
+      -->
+
+        <button class="bigButton" onclick="switchToAddTerm()">Los geht's</button>
+      </div>
+
+
+
+
+      <div id="addTerms">
+
+        <div class="infobar">
+          <button class='qrcodeButton' onclick="showQRcode()">
+            <img src="/svg/qr_code_2-24px_blue.svg" alt="QR-Code">
+          </button>
+          <div class="teamInfo">
+            <p>Team </p>
+            <div class="teamBox">
+              <p class="displayTeam">#</p>
+            </div>
+          </div>
+        </div>
+
+        <p>Begriffe hinzufügen</p>
+
+        <div>
+          <ul id="termList">
+          </ul>
+        </div>
+        <form class="centeredForm" id="termForm">
+          <input type="text" id="term" name="begriff">
+          <div id='submitTerm' onclick="addTerm()" class='arrowButton'>
+          </div>
+        </form>
+        <div class="creator">
+          <button class="bigButton" onclick="startGameForCreator()">Runde starten</button>
+        </div>
+        <br>
+        <div class="displayRoundcode">
+          <p class="nameOfRoundHeading">Rundencode: </p>
+          <p class="nameOfRound">#####</p>
+        </div>
+      </div>
+
+
+
+
+      <div id="guessing">
+
+        <div class="infobar">
+          <div class="scoreboard">
+            <p class="pointsTeam1">##</p>
+            <p>&nbsp:&nbsp</p>
+            <p class="pointsTeam2">##</p>
+          </div>
+          <div class="teamInfo">
+            <p>Team </p>
+            <div class="teamBox">
+              <p class="displayTeam">#</p>
+            </div>
+          </div>
+        </div>
+
+        <button class="bigButton" onclick="switchToPlaying()">Ich bin dran</button>
+
+        <div class="displayRoundcode">
+          <p class="nameOfRoundHeading">Rundencode: </p>
+          <p class="nameOfRound">#####</p>
+        </div>
+      </div>
+
+
+
+
+      <div id="playing">
+
+        <div class="infobar">
+          <div class="scoreboard">
+            <p class="pointsTeam1">##</p>
+            <p>&nbsp:&nbsp</p>
+            <p class="pointsTeam2">##</p>
+          </div>
+          <div class="teamInfo">
+            <p>Team </p>
+            <div class="teamBox">
+              <p class="displayTeam">#</p>
+            </div>
+          </div>
+        </div>
+
+        <p id="timer">Timer</p>
+
+        <p id="displayedTerm">########</p>
+        <div class="buttonGroup">
+          <button class="bigButton" id='nextTerm' onclick="displayTerm()">Überspringen</button>
+          <button class="bigButton" id="guessed" onclick="guessedRight()">
+            <img src="/svg/check-24px_white.svg" alt="Erraten">
+          </button>
+        </div>
+
+        <div class="displayRoundcode">
+          <p class="nameOfRoundHeading">Rundencode: </p>
+          <p class="nameOfRound">#####</p>
+        </div>
+
+      </div>
+
+
+
+
+      <div id="endscreen">
+        <p>Der Hut ist leer!</p>
+        <div id="hut">🎩</div>
+        <div class="scoreboard">
+          <p class="pointsTeam1">##</p>
+          <p>&nbsp:&nbsp</p>
+          <p class="pointsTeam2">##</p>
+        </div>
+        <p>Alle Begriffe wurden erraten</p>
+        <div class="creator">
+          <button onclick="resetWords()" class="bigButton">Weitere Runde spielen</button>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+  <div id="qrcode" onclick="hideQRcode()"></div>
+
+
+
+
+
+
+  <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-database.js"></script>
+  <script src="/js/firebase.js"></script>
+
+  <script src="/js/qrcode.min.js"></script>
+  <script src="./functions.js"></script>
+
+</body>
+
+</html>
